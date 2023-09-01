@@ -23,13 +23,12 @@ public abstract class MainServlet extends HttpServlet {
 
 	public void service(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
 	    try {
-	    	Boolean tabelaCriada = (Boolean) getSession(request).getAttribute("tabelaCriada");
+	        Boolean tabelaCriada = (Boolean) getSession(request).getAttribute("tabelaCriada");
 
 	        if (tabelaCriada == null || !tabelaCriada) {
 		        MovieService service = MovieService.getInstance();
 		        
 		        service.criarTabela();
-		        System.out.println("Tabela movie criada.");
 		        
 		        getSession(request).setAttribute("tabelaCriada", true);
 	    	}

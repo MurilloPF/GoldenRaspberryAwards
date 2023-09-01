@@ -11,26 +11,29 @@ import java.util.Collection;
 import com.texoit.gra.vo.MovieVo;
 
 public class MovieDao {
-	private Connection connection;
+	private static Connection connection;
 	private static MovieDao INSTANCE;
 
 	private MovieDao() throws Exception {
-		setConnection();
-	};
+		
+	}
 
 	public static MovieDao getInstance() throws Exception {
 		if (INSTANCE==null) {
 			INSTANCE = new MovieDao();			
 		}
-		
+		setConnection();
 		return INSTANCE;
 	}
 	
-	public static Connection setConnection() throws Exception {
-        String jdbcURL = "jdbc:h2:mem:test"; 
-        return DriverManager.getConnection(jdbcURL); 
+	public static void setConnection() throws Exception {
+		if (connection == null) {
+	        String jdbcURL = "jdbc:h2:~/test"; 
+	    	Class.forName ("org.h2.Driver"); 
+	    	connection = DriverManager.getConnection (jdbcURL, "sa",""); 
+		} 
 	}
-
+	
 	public void criarTabela() throws Exception {
         String sql = "drop table if exists movie";
         Statement statement = connection.createStatement();
@@ -41,6 +44,19 @@ public class MovieDao {
         statement = connection.createStatement();
         statement.execute(sql);         
         System.out.println("Tabela movie criada.");
+        
+        statement.close();
+    }
+    
+    public void limparTabela() throws Exception {
+        String deleteQuery = "delete from movie";
+        Statement  statement = connection.createStatement();
+        
+        statement.executeUpdate(deleteQuery);
+        
+        connection.commit();
+        
+        statement.close();
     }
     
     public void inserirTabela(MovieVo movie) throws Exception {
@@ -55,6 +71,10 @@ public class MovieDao {
         preparedStatement.setString(6, movie.getWinner());
         
         preparedStatement.executeUpdate();
+        
+        connection.commit();
+        
+        preparedStatement.close();
     }
     
     public Collection<MovieVo> listarTabela() throws Exception {
@@ -65,15 +85,18 @@ public class MovieDao {
         ResultSet resultSet = statement.executeQuery(sql);
         
         MovieVo movie = new MovieVo();
-        while (resultSet.next()) {
-        	
+        while (resultSet.next()) {        	
         	movie.setSeq(resultSet.getInt("seq"));
         	movie.setAno(resultSet.getInt("no_year"));
         	movie.setTitle( resultSet.getString("title"));
         	movie.setStudios(resultSet.getString("studios"));
         	movie.setProducers(resultSet.getString("producers"));
         	movie.setWinner(resultSet.getString("winner"));
+        	
+        	lista.add(movie);
         }
+        
+        statement.close();
         
         return lista;
     }

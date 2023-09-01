@@ -11,9 +11,10 @@ import com.texoit.gra.dao.MovieDao;
 import com.texoit.gra.vo.MovieVo;
 
 public class MovieService {
-	private MovieService() {};
-
 	private static MovieService INSTANCE;
+
+	private MovieService() {
+	}
 
 	public static MovieService getInstance() {
 		if (INSTANCE==null)	INSTANCE = new MovieService();
@@ -27,9 +28,16 @@ public class MovieService {
 		dao.criarTabela();
 	}
 	
+	public void limparTabela() throws Exception {
+		MovieDao dao = MovieDao.getInstance();
+		
+		dao.limparTabela();
+	}
+	
 	public void inserirTabela(MovieVo movie) throws Exception {
 		MovieDao dao = MovieDao.getInstance();
 		
+
 		dao.inserirTabela(movie);
 	}
 	
@@ -43,6 +51,8 @@ public class MovieService {
         MovieVo movie = new MovieVo();
         String[] nextLine;
         int seq = 0;
+        
+
         while ((nextLine = csvReader.readNext()) != null) {
         	seq++;
         	
@@ -54,7 +64,7 @@ public class MovieService {
         	movie.setWinner(nextLine[4]);        	
           
             dao.inserirTabela(movie);
-        }
+		}
 	}
 	
 	public Collection<MovieVo> listarTabela() throws Exception {

@@ -3,7 +3,7 @@
 <%@ page import="com.texoit.gra.vo.*" %>
 <%@ page import="java.util.*" %>
 
-<jsp:useBean id="boxAnalysisList" scope="request" type="java.util.Collection" />
+<jsp:useBean id="lista" scope="request" type="java.util.Collection" />
 
 <html>
 <head>
