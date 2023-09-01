@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import com.texoit.gra.vo.MovieVo;
+import com.texoit.gra.vo.ProdutorPremioVo;
 
 public class MovieDao {
 	private static Connection connection;
@@ -80,7 +81,7 @@ public class MovieDao {
     public Collection<MovieVo> listarTabela() throws Exception {
     	ArrayList<MovieVo> lista = new ArrayList<MovieVo>();
     	
-    	String  sql = "select * from movie";	        
+    	String  sql = "select * from movie order by seq";	        
         Statement  statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
         
@@ -95,6 +96,52 @@ public class MovieDao {
         	movie.setWinner(resultSet.getString("winner"));
         	
         	lista.add(movie);
+        }
+        
+        statement.close();
+        
+        return lista;
+    }
+    
+    public Collection<ProdutorPremioVo> listarProdutoresMenorIntervaloPremiosConsecutivos() throws Exception {
+    	ArrayList<ProdutorPremioVo> lista = new ArrayList<ProdutorPremioVo>();
+    	
+    	String  sql = "select * from movie order by seq";	        
+        Statement  statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+        
+        while (resultSet.next()) {        	
+        	ProdutorPremioVo vo = new ProdutorPremioVo();
+
+            vo.setProducer(resultSet.getString("producer"));
+            vo.setIntervalo(resultSet.getInt("intervalo"));
+            vo.setPrimeiroAno(resultSet.getInt("first_year"));
+            vo.setSegundoAno(resultSet.getInt("second_year"));
+        	
+        	lista.add(vo);
+        }
+        
+        statement.close();
+        
+        return lista;
+    }
+    
+    public Collection<ProdutorPremioVo> listarProdutoresMaiorIntervaloPremiosConsecutivos() throws Exception {
+    	ArrayList<ProdutorPremioVo> lista = new ArrayList<ProdutorPremioVo>();
+    	
+    	String  sql = "select * from movie order by seq";	        
+        Statement  statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+        
+        while (resultSet.next()) {        	
+        	ProdutorPremioVo vo = new ProdutorPremioVo();
+
+            vo.setProducer(resultSet.getString("producer"));
+            vo.setIntervalo(resultSet.getInt("intervalo"));
+            vo.setPrimeiroAno(resultSet.getInt("first_year"));
+            vo.setSegundoAno(resultSet.getInt("second_year"));
+        	
+        	lista.add(vo);
         }
         
         statement.close();

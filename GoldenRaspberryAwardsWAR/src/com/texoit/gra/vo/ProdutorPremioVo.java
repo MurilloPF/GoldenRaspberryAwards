@@ -6,7 +6,7 @@ public class ProdutorPremioVo implements Serializable {
 	private static final long serialVersionUID = 956855863985L;
 	
 	private String producer;
-	private Integer Intervalo;
+	private Integer intervalo;
 	private Integer primeiroAno;
 	private Integer segundoAno;
 	
@@ -19,11 +19,11 @@ public class ProdutorPremioVo implements Serializable {
 	}
 
 	public Integer getIntervalo() {
-		return Intervalo;
+		return intervalo;
 	}
 
 	public void setIntervalo(Integer intervalo) {
-		Intervalo = intervalo;
+		this.intervalo = intervalo;
 	}
 
 	public Integer getPrimeiroAno() {
