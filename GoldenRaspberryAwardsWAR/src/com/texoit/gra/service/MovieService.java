@@ -1,6 +1,7 @@
 package com.texoit.gra.service;
 
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import com.opencsv.CSVParser;
@@ -9,6 +10,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.texoit.gra.dao.MovieDao;
 import com.texoit.gra.vo.MovieVo;
+import com.texoit.gra.vo.ProdutorPremioVo;
 
 public class MovieService {
 	private static MovieService INSTANCE;
@@ -79,4 +81,44 @@ public class MovieService {
 		
 		return dao.listarTabela();
 	}
+	
+	public Collection<ProdutorPremioVo> listarProdutoresPremiados() throws Exception {
+		MovieDao dao = MovieDao.getInstance();
+		
+		return dao.listarProdutoresPremiados();
+	}
+	
+	public Collection<ProdutorPremioVo> listarProdutoresPremiadosMenorIntervalo() throws Exception {
+		MovieDao dao = MovieDao.getInstance();
+		
+		ArrayList<ProdutorPremioVo> listaMaiorIntervalo = new ArrayList<ProdutorPremioVo>();
+		Collection<ProdutorPremioVo> listaPremiados = dao.listarProdutoresPremiados();
+		if (listaPremiados != null && !listaPremiados.isEmpty()) {
+			Integer minIntervalo = dao.getMinIntervalo();
+			for (ProdutorPremioVo produtor : listaPremiados) {
+				if (produtor.getIntervalo().intValue() == minIntervalo.intValue()) {
+					listaMaiorIntervalo.add(produtor);
+				}
+			}
+		}
+		
+		return listaMaiorIntervalo;
+	}
+	
+	public Collection<ProdutorPremioVo> listarProdutoresPremiadosMaiorIntervalo() throws Exception {
+		MovieDao dao = MovieDao.getInstance();
+		
+		ArrayList<ProdutorPremioVo> listaMaiorIntervalo = new ArrayList<ProdutorPremioVo>();
+		Collection<ProdutorPremioVo> listaPremiados = dao.listarProdutoresPremiados();
+		if (listaPremiados != null && !listaPremiados.isEmpty()) {
+			Integer maxIntervalo = dao.getMaxIntervalo();
+			for (ProdutorPremioVo produtor : listaPremiados) {
+				if (produtor.getIntervalo().intValue() == maxIntervalo.intValue()) {
+					listaMaiorIntervalo.add(produtor);
+				}
+			}
+		}
+		
+		return listaMaiorIntervalo;
+	}	
 }
