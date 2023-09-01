@@ -9,7 +9,7 @@ public class MovieVo implements Serializable {
 	private Integer ano;
 	private String title;
 	private String studios;
-	private String producers;
+	private String producer;
 	private String winner;
 	
 	public Integer getSeq() {
@@ -44,12 +44,12 @@ public class MovieVo implements Serializable {
 		this.studios = studios;
 	}
 	
-	public String getProducers() {
-		return producers;
+	public String getProducer() {
+		return producer;
 	}
 	
-	public void setProducers(String producers) {
-		this.producers = producers;
+	public void setProducer(String producers) {
+		this.producer = producers;
 	}
 	
 	public String getWinner() {

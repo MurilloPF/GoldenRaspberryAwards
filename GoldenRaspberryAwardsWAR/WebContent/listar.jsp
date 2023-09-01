@@ -18,7 +18,7 @@
             <th>Ano</th>
             <th>Title</th>
             <th>Studios</th>
-            <th>Producers</th>
+            <th>Producer</th>
             <th>Winner</th>
         </tr>
         <%
@@ -30,7 +30,7 @@
             <td><%= movie.getAno() %></td>
             <td><%= movie.getTitle() %></td>
             <td><%= movie.getStudios() %></td>
-            <td><%= movie.getProducers() %></td>
+            <td><%= movie.getProducer()%></td>
             <td><%= movie.getWinner() %></td>
         </tr>
         <%

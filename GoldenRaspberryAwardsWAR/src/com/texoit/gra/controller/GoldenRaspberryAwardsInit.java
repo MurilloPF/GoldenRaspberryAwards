@@ -21,7 +21,7 @@ public class GoldenRaspberryAwardsInit extends MainServlet {
         Collection<MovieVo> lista = service.listarTabela();		
 		int count = 1;
         for (MovieVo movieVo : lista) {
-            System.out.println("Movie #" + (count++) + ": " + movieVo.getSeq() + "; " + "; " + movieVo.getAno() + "; " + movieVo.getTitle() + "; " + movieVo.getStudios() + "; " + movieVo.getProducers() + "; " + (Utils.ehVazio(movieVo.getWinner()) ? "No" : movieVo.getWinner()));
+            System.out.println("Movie #" + (count++) + ": " + movieVo.getSeq() + "; " + "; " + movieVo.getAno() + "; " + movieVo.getTitle() + "; " + movieVo.getStudios() + "; " + movieVo.getProducer() + "; " + (Utils.ehVazio(movieVo.getWinner()) ? "No" : movieVo.getWinner()));
         }
         
         System.out.println("CVS carregado com sucesso.");

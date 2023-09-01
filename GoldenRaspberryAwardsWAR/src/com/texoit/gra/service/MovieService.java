@@ -50,20 +50,27 @@ public class MovieService {
         
         MovieVo movie = new MovieVo();
         String[] nextLine;
-        int seq = 0;
-        
-
+        int seq = 0; 
         while ((nextLine = csvReader.readNext()) != null) {
-        	seq++;
-        	
-        	movie.setSeq(seq);
-        	movie.setAno(Integer.parseInt(nextLine[0]));
-        	movie.setTitle(nextLine[1]);
-        	movie.setStudios(nextLine[2]);
-        	movie.setProducers(nextLine[3]);
-        	movie.setWinner(nextLine[4]);        	
-          
-            dao.inserirTabela(movie);
+            int no_year = Integer.parseInt(nextLine[0]);
+            String title = nextLine[1];
+            String studios = nextLine[2];
+            String producers = nextLine[3];
+            String winner = nextLine[4];
+            
+            producers = producers.replaceAll(" And ", ",").replaceAll(" and ", ",").replaceAll(",,", ", ");	            
+            String[] producersArray = producers.split(",");
+            for (String producer : producersArray) {
+            	seq++;
+            	movie.setSeq(seq);
+            	movie.setAno(no_year);
+            	movie.setTitle(title);
+            	movie.setStudios(studios);
+            	movie.setProducer(producer);
+            	movie.setWinner(winner);        	
+              
+                dao.inserirTabela(movie);
+            }
 		}
 	}
 	

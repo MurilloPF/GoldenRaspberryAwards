@@ -40,7 +40,7 @@ public class MovieDao {
         statement.execute(sql);         
         System.out.println("Tabela movie apagada.");
         
-        sql = "Create table movie (seq int primary key, no_year integer, title varchar(200), studios varchar(200), producers varchar(200), winner character(3))";
+        sql = "Create table movie (seq int primary key, no_year integer, title varchar(200), studios varchar(200), producer varchar(200), winner character(3))";
         statement = connection.createStatement();
         statement.execute(sql);         
         System.out.println("Tabela movie criada.");
@@ -60,14 +60,14 @@ public class MovieDao {
     }
     
     public void inserirTabela(MovieVo movie) throws Exception {
-        String insertQuery = "insert into movie (seq, no_year, title, studios, producers, winner) values (?, ?, ?, ?, ?, ?)";
+        String insertQuery = "insert into movie (seq, no_year, title, studios, producer, winner) values (?, ?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
         
         preparedStatement.setInt(1, movie.getSeq());
         preparedStatement.setInt(2, movie.getAno());
         preparedStatement.setString(3, movie.getTitle());
         preparedStatement.setString(4, movie.getStudios());
-        preparedStatement.setString(5, movie.getProducers());
+        preparedStatement.setString(5, movie.getProducer());
         preparedStatement.setString(6, movie.getWinner());
         
         preparedStatement.executeUpdate();
@@ -84,13 +84,14 @@ public class MovieDao {
         Statement  statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
         
-        MovieVo movie = new MovieVo();
         while (resultSet.next()) {        	
-        	movie.setSeq(resultSet.getInt("seq"));
+            MovieVo movie = new MovieVo();
+
+            movie.setSeq(resultSet.getInt("seq"));
         	movie.setAno(resultSet.getInt("no_year"));
         	movie.setTitle( resultSet.getString("title"));
         	movie.setStudios(resultSet.getString("studios"));
-        	movie.setProducers(resultSet.getString("producers"));
+        	movie.setProducer(resultSet.getString("producer"));
         	movie.setWinner(resultSet.getString("winner"));
         	
         	lista.add(movie);
