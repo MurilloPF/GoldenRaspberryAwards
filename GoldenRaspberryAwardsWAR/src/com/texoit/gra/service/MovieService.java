@@ -88,6 +88,18 @@ public class MovieService {
 		return dao.listarProdutoresPremiados();
 	}
 	
+	public Integer getMinIntervalo() throws Exception {
+		MovieDao dao = MovieDao.getInstance();
+		
+		return dao.getMinIntervalo();
+	}
+	
+	public Integer getMaxIntervalo() throws Exception {
+		MovieDao dao = MovieDao.getInstance();
+		
+		return dao.getMaxIntervalo();
+	}
+	
 	public Collection<ProdutorPremioVo> listarProdutoresPremiadosMenorIntervalo() throws Exception {
 		MovieDao dao = MovieDao.getInstance();
 		
