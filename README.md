@@ -30,8 +30,8 @@ foobar.singularize('phenomena')
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
-![Tela teste Aplicação](https://github.com/MurilloPF/TexoITGoldenRaspberryAwards/tree/main/GoldenRaspberryAwardsWAR/WebContent/images/Teste Aplicacao.jpg)
+![Tela teste Aplicação](https://github.com/MurilloPF/TexoITGoldenRaspberryAwards/tree/main/GoldenRaspberryAwardsWAR/WebContent/images/Teste_Aplicacao.jpg)
 
-![Tela teste Aplicação](https://github.com/MurilloPF/TexoITGoldenRaspberryAwards/tree/main/GoldenRaspberryAwardsWAR/WebContent/images/Teste Werservice.jpg)
+![Tela teste Aplicação](https://github.com/MurilloPF/TexoITGoldenRaspberryAwards/tree/main/GoldenRaspberryAwardsWAR/WebContent/images/Teste_Werservice.jpg)
 
 Please make sure to update tests as appropriate.
