@@ -24,7 +24,7 @@ Uma vez comprovado que a carga foi correta, pode se executar a URL do Webservice
 
 ### Arquivo CSV para carga
 ```python
-# Copiar o arquivo CSV para esta pasta
+# Copiar o arquivo CSV para esta pasta (U exemplo da estrutura do arquivo está no final deste documento)
 C:\Temp\movielist.csv
 ```
 
@@ -85,7 +85,10 @@ execução correta dos componentes, conforme as evidências abaixo.
 <p><img width="800em" src="https://raw.githubusercontent.com/MurilloPF/TexoITGoldenRaspberryAwards/main/GoldenRaspberryAwardsWAR/WebContent/images/Teste_Aplicacao.jpg" alt="Tela teste Aplicação"/></p>
 </div>
 
-<div align="left">
-<p><strong>Tela de Teste do Webservice</strong></p>
-<p><img width="800em" src="https://raw.githubusercontent.com/MurilloPF/TexoITGoldenRaspberryAwards/main/GoldenRaspberryAwardsWAR/WebContent/images/Teste_Werservice.jpg" alt="Tela teste Webservice"/></p>
-</div>
+## Anexos
+
+Abaixo para referência esta o documento de especificação da aplicação e um exemplo com o formato do arquivo CSV usado para carga.
+
+[Especificação Backend](https://raw.githubusercontent.com/MurilloPF/TexoITGoldenRaspberryAwards/main/GoldenRaspberryAwardsWAR/WebContent/recursos/Especifica%C3%A7%C3%A3o_Backend.pdf)
+
+[Arquivo CSV](https://raw.githubusercontent.com/MurilloPF/TexoITGoldenRaspberryAwards/main/GoldenRaspberryAwardsWAR/WebContent/recursos/movielist.csv)
