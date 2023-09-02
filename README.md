@@ -2,7 +2,7 @@
 
 Foobar is a Python library for dealing with word pluralization.
 
-## Installation
+## Instalação
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
@@ -10,7 +10,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 pip install foobar
 ```
 
-## Usage
+## Uso
 
 ```python
 import foobar
@@ -25,13 +25,13 @@ foobar.pluralize('goose')
 foobar.singularize('phenomena')
 ```
 
-## Contributing
+## Teste
 
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
+![Tela teste Aplicação](https://github.com/MurilloPF/TexoITGoldenRaspberryAwards/tree/main/GoldenRaspberryAwardsWAR/WebContent/images/Teste Aplicacao.jpg)
+
+![Tela teste Aplicação](https://github.com/MurilloPF/TexoITGoldenRaspberryAwards/tree/main/GoldenRaspberryAwardsWAR/WebContent/images/Teste Werservice.jpg)
+
 Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
