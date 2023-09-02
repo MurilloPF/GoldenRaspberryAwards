@@ -19,8 +19,14 @@ execução correta dos componentes, conforme as evidências abaixo.
 
 ## Uso
 
-Após a instalação da aplicação, a URL da aplicação Web deverá ser executada, de forma a garantir que o arquivo CSV foi carregado corretamente. 
+Após a instalação da aplicação, o arquivo CSV a ser carregado deverá ser colocado na pasta de carga mantendo o nome original **(C:\Temp\movielist.csv)**. A seguir URL da aplicação Web deverá ser executada (como no link abaixo), de forma a garantir que o arquivo CSV foi carregado corretamente. 
 Uma vez comprovado que a carga foi correta, pode se executar a URL do Webservice abaixo.
+
+### Arquivo CSV para carga
+```python
+# Copiar o arquivo CSV para esta pasta
+C:\Temp\movielist.csv
+```
 
 ### Execução da aplicação Web
 ```python
