@@ -8,9 +8,7 @@ O projeto está atualizado no GitHub [GoldenRaspberryAwards](https://github.com/
 
 ## Estrutura da Aplicação
 
-Depois de terminada a codificação dos componenetes, foram excutados os Testes de Funcionalidade e de Integração, 
-tanto da aplicação WEB quanto no Webservice, e os ajustes necessários foram feitos, resultando da execução
-execução correta dos componentes, conforme as evidências abaixo.
+A aplicação é composta de um projeto EAR **(GoldenRaspberryAwardsEAR)** e um projeto web **(GoldenRaspberryAwardsWAR)**. No projeto WAR foram criados dois servlets, um para realizar a carga (GoldenRaspberryAwardsInit) e outro para listar a tabela carrgada (GoldenRaspberryAwardsList), de forma a validara carga. O serviço Rest foi criado no projeto WAR na pasta **com.texoit.gra.ws**. Abaixo pode se visualizar a estrutura básica dos projetos.
 
 <div align="left">
 <p><strong>Pacotes e Componentes do Projeto</strong></p>
@@ -19,8 +17,7 @@ execução correta dos componentes, conforme as evidências abaixo.
 
 ## Uso
 
-Após a instalação da aplicação, o arquivo CSV a ser carregado deverá ser colocado na pasta de carga mantendo o nome original **(C:\Temp\movielist.csv)**. A seguir URL da aplicação Web deverá ser executada (como no link abaixo), de forma a garantir que o arquivo CSV foi carregado corretamente. 
-Uma vez comprovado que a carga foi correta, pode se executar a URL do Webservice abaixo.
+Após a instalação da aplicação, o arquivo CSV a ser carregado deverá ser colocado na pasta de carga mantendo o nome original **(C:\Temp\movielist.csv)**. A seguir URL da aplicação Web deverá ser executada (como no link abaixo), de forma a garantir que o arquivo CSV foi carregado corretamente. Uma vez comprovado que a carga foi correta, pode se executar a URL do Webservice abaixo. Para reexecutar o teste com outro arquivo CSV não é necessário restartar o servidor, basta copiar o novo arquivo CSV para a pasta indicada, e repetir os passos acima. 
 
 ### Arquivo CSV para carga
 ```python
