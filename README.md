@@ -8,7 +8,7 @@ O projeto está atualizado no GitHub [GoldenRaspberryAwards](https://github.com/
 
 ## Estrutura da Aplicação
 
-A aplicação é composta de um projeto EAR **(GoldenRaspberryAwardsEAR)** e um projeto web **(GoldenRaspberryAwardsWAR)**. No projeto WAR foram criados dois servlets, um para realizar a carga (GoldenRaspberryAwardsInit) e outro para listar a tabela carrgada (GoldenRaspberryAwardsList), de forma a validara carga. O serviço Rest foi criado no projeto WAR na pasta **com.texoit.gra.ws**. Abaixo pode se visualizar a estrutura básica dos projetos.
+A aplicação é composta de um projeto EAR **(GoldenRaspberryAwardsEAR)** e um projeto web **(GoldenRaspberryAwardsWAR)**. No projeto WAR foram criados dois servlets, um para realizar a carga (GoldenRaspberryAwardsInit) e outro para listar a tabela carregada (GoldenRaspberryAwardsList), de forma a validar a carga. O serviço Rest foi criado no projeto WAR na pasta **com.texoit.gra.ws**. Abaixo pode se visualizar a estrutura básica dos projetos.
 
 <div align="left">
 <p><strong>Pacotes e Componentes do Projeto</strong></p>
@@ -88,6 +88,11 @@ execução correta dos componentes, conforme as evidências abaixo.
 <div align="left">
 <p><strong>Tela de Teste do Aplicação</strong></p>
 <p><img width="800em" src="https://raw.githubusercontent.com/MurilloPF/TexoITGoldenRaspberryAwards/main/GoldenRaspberryAwardsWAR/WebContent/images/Teste_Aplicacao.jpg" alt="Tela teste Aplicação"/></p>
+</div>
+
+<div align="left">
+<p><strong>Tela de Teste do Webservice</strong></p>
+<p><img width="800em" src="https://raw.githubusercontent.com/MurilloPF/TexoITGoldenRaspberryAwards/main/GoldenRaspberryAwardsWAR/WebContent/images/Teste_Webservice.jpg" alt="Tela teste Webservice"/></p>
 </div>
 
 ## Anexos
