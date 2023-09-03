@@ -15,6 +15,14 @@ A aplicação é composta de um projeto EAR **(GoldenRaspberryAwardsEAR)** e um 
 <p><img width="400em" src="https://raw.githubusercontent.com/MurilloPF/TexoITGoldenRaspberryAwards/main/GoldenRaspberryAwardsWAR/WebContent/images/Estrutura_projetos.jpg" alt="Tela teste Aplicação"/></p>
 </div>
 
+## Estrutura do Banco de Dados
+
+Quando a aplicação é iniciada, antes da carga, a tabela **MOVIE** é criada para que as informações do arquivo CSV possam ser carregadas. Abaixo se pode visualizar a estrutura da tabela. 
+
+### Tabela MOVIE
+```python
+Create table movie (seq int primary key, no_year integer, title varchar(200), studios varchar(200), producer varchar(200), winner character(3))";
+```
 ## Uso
 
 Após a instalação da aplicação, o arquivo CSV a ser carregado deverá ser colocado na pasta de carga mantendo o nome original **(C:\Temp\movielist.csv)**. A seguir URL da aplicação Web deverá ser executada (como no link abaixo), de forma a garantir que o arquivo CSV foi carregado corretamente. Uma vez comprovado que a carga foi correta, pode se executar a URL do Webservice abaixo. Para reexecutar o teste com outro arquivo CSV não é necessário restartar o servidor, basta copiar o novo arquivo CSV para a pasta indicada, e repetir os passos acima. 
